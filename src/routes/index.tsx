@@ -75,7 +75,6 @@ function Landing() {
     offset: ["start start", "end start"],
   });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 90]);
-  const heroFade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <main className="overflow-x-hidden">
@@ -94,7 +93,7 @@ function Landing() {
           className="animate-float pointer-events-none absolute -left-24 top-40 -z-10 h-72 w-72 rounded-full blur-3xl"
           style={{ background: "var(--gradient-brand)", opacity: 0.12 }}
         />
-        <motion.div style={{ y: heroY, opacity: heroFade }} className="mx-auto max-w-6xl">
+        <motion.div style={{ y: heroY }} className="mx-auto max-w-6xl">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card px-4 py-1.5 text-xs font-semibold tracking-wide text-primary shadow-soft">
               BUILT FOR SOUTH AFRICAN BUSINESSES
