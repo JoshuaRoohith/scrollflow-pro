@@ -18,7 +18,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-5">
         <div>
           <BlinkLogo />
-          <p className="mt-3 text-sm text-muted-foreground">Science of Yoga</p>
+          <p className="mt-3 text-sm text-muted-foreground">Procurement, Simplified</p>
           <a
             href="https://www.linkedin.com"
             aria-label="Blink on LinkedIn"
