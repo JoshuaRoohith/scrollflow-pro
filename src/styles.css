@@ -47,6 +47,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-lavender: var(--lavender);
+  --color-teal: var(--teal);
+  --color-coral: var(--coral);
+  --color-amber: var(--amber);
+  --color-sky: var(--sky);
   --color-ink: var(--ink);
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
@@ -76,6 +80,10 @@
   --input: oklch(0.93 0.012 285);
   --ring: oklch(0.68 0.14 283);
   --lavender: oklch(0.955 0.02 288);
+  --teal: oklch(0.72 0.13 190);
+  --coral: oklch(0.72 0.16 25);
+  --amber: oklch(0.79 0.14 75);
+  --sky: oklch(0.68 0.15 245);
 
   --gradient-brand: linear-gradient(135deg, var(--primary), var(--primary-soft));
   --gradient-band: linear-gradient(180deg, oklch(0.975 0.015 288), oklch(0.955 0.025 288));
@@ -127,6 +135,47 @@
   background: var(--gradient-band);
 }
 
+@utility band-aurora {
+  background:
+    radial-gradient(45% 55% at 12% 10%, oklch(0.72 0.13 190 / 0.14) 0%, transparent 70%),
+    radial-gradient(40% 50% at 88% 20%, oklch(0.72 0.16 25 / 0.12) 0%, transparent 70%),
+    radial-gradient(50% 60% at 60% 95%, oklch(0.53 0.21 285 / 0.12) 0%, transparent 70%),
+    var(--gradient-band);
+}
+
+@utility glass-card {
+  background: color-mix(in oklab, var(--color-card) 72%, transparent);
+  backdrop-filter: blur(14px);
+  border-radius: calc(var(--radius) + 8px);
+  border: 1px solid oklch(1 0 0 / 0.5);
+  box-shadow: var(--shadow-lift);
+}
+
+@utility ring-accent-teal {
+  background: color-mix(in oklab, var(--teal) 16%, transparent);
+  color: oklch(0.48 0.1 190);
+}
+
+@utility ring-accent-coral {
+  background: color-mix(in oklab, var(--coral) 16%, transparent);
+  color: oklch(0.52 0.14 25);
+}
+
+@utility ring-accent-amber {
+  background: color-mix(in oklab, var(--amber) 20%, transparent);
+  color: oklch(0.52 0.11 70);
+}
+
+@utility ring-accent-sky {
+  background: color-mix(in oklab, var(--sky) 16%, transparent);
+  color: oklch(0.5 0.13 245);
+}
+
+@utility ring-accent-violet {
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+  color: var(--primary);
+}
+
 @utility shadow-lift {
   box-shadow: var(--shadow-lift);
 }
@@ -167,3 +216,12 @@
   animation: scroll-hint 2s ease-in-out infinite;
 }
 
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility animate-marquee {
+  animation: marquee-x 26s linear infinite;
+}
