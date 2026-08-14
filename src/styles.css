@@ -225,3 +225,67 @@
 @utility animate-marquee {
   animation: marquee-x 26s linear infinite;
 }
+
+/* ── Kinetic editorial layer ─────────────────────────────── */
+
+@utility grain-overlay {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: radial-gradient(
+      oklch(0.53 0.21 285 / 0.22) 0.5px,
+      transparent 0.6px
+    );
+    background-size: 4px 4px;
+  }
+}
+
+@utility hairline-grid {
+  background-image:
+    linear-gradient(to right, oklch(0.53 0.21 285 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.53 0.21 285 / 0.07) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px oklch(0.53 0.21 285 / 0.45);
+}
+
+@utility ink-panel {
+  background:
+    radial-gradient(60% 80% at 12% 0%, oklch(0.42 0.18 288 / 0.9) 0%, transparent 60%),
+    radial-gradient(55% 70% at 92% 100%, oklch(0.5 0.12 200 / 0.55) 0%, transparent 60%),
+    var(--ink);
+  color: oklch(0.97 0.01 285);
+}
+
+@utility rule-tick {
+  background-image: repeating-linear-gradient(
+    to right,
+    oklch(0.53 0.21 285 / 0.5) 0 1px,
+    transparent 1px 12px
+  );
+}
+
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(6%, -5%, 0) scale(1.12);
+  }
+  66% {
+    transform: translate3d(-5%, 4%, 0) scale(0.94);
+  }
+}
+
+@utility animate-blob {
+  animation: blob-drift 18s ease-in-out infinite;
+}
