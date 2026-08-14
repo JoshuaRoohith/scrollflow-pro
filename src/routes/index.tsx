@@ -20,6 +20,10 @@ import { Reveal } from "../components/reveal";
 import { features } from "../lib/features-data";
 import waveDivider from "../assets/wave-divider.jpg";
 import ctaHandshake from "../assets/cta-handshake.jpg";
+import heroDashboard from "../assets/hero-dashboard.jpg";
+import meshGradient from "../assets/mesh-gradient.jpg";
+import teamCollab from "../assets/team-collab.jpg";
+import networkNodes from "../assets/network-nodes.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,6 +53,17 @@ const featureIcons: Record<string, typeof Trophy> = {
   vendors: BadgeCheck,
   handshake: Handshake,
 };
+
+const accentChips = [
+  "ring-accent-violet",
+  "ring-accent-teal",
+  "ring-accent-coral",
+  "ring-accent-sky",
+  "ring-accent-amber",
+  "ring-accent-violet",
+];
+
+const stepAccents = ["text-primary/25", "text-teal/35", "text-coral/35"];
 
 const steps = [
   {
@@ -94,6 +109,8 @@ function Landing() {
           style={{ background: "var(--gradient-brand)", opacity: 0.12 }}
         />
         <motion.div style={{ y: heroY }} className="mx-auto max-w-6xl">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
+          <div>
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card px-4 py-1.5 text-xs font-semibold tracking-wide text-primary shadow-soft">
               BUILT FOR SOUTH AFRICAN BUSINESSES
@@ -111,6 +128,29 @@ function Landing() {
               vendor performance all in one place.
             </p>
           </Reveal>
+
+          </div>
+
+          <Reveal delay={0.18}>
+            <div className="relative">
+              <div
+                aria-hidden
+                className="animate-float absolute -inset-6 -z-10 rounded-[2.5rem] blur-2xl"
+                style={{
+                  background:
+                    "radial-gradient(50% 50% at 30% 30%, oklch(0.72 0.13 190 / 0.35), transparent 70%), radial-gradient(50% 50% at 75% 70%, oklch(0.53 0.21 285 / 0.35), transparent 70%)",
+                }}
+              />
+              <img
+                src={heroDashboard}
+                alt="Blink procurement dashboard showing spend analytics and vendor cards"
+                width={1280}
+                height={1024}
+                className="w-full rounded-[2rem] shadow-lift"
+              />
+            </div>
+          </Reveal>
+          </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <Reveal delay={0.22}>
@@ -193,19 +233,38 @@ function Landing() {
             </a>
           </div>
         </Reveal>
-        <img
-          src={waveDivider}
-          alt=""
-          aria-hidden
-          loading="lazy"
-          width={1920}
-          height={600}
-          className="mt-12 h-40 w-full object-cover sm:h-56"
-        />
+        <div className="relative mt-14">
+          <img
+            src={meshGradient}
+            alt=""
+            aria-hidden
+            loading="lazy"
+            width={1600}
+            height={900}
+            className="h-40 w-full object-cover opacity-90 sm:h-56"
+          />
+          <img
+            src={waveDivider}
+            alt=""
+            aria-hidden
+            loading="lazy"
+            width={1920}
+            height={600}
+            className="absolute inset-0 h-full w-full object-cover mix-blend-soft-light"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, var(--color-background) 0%, transparent 35%, transparent 65%, var(--color-background) 100%)",
+            }}
+          />
+        </div>
       </section>
 
       {/* FEATURES */}
-      <section id="features" className="band-lavender px-6 py-20 sm:py-28">
+      <section id="features" className="band-aurora px-6 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal className="text-center">
             <h2 className="text-3xl font-extrabold text-primary sm:text-4xl">
@@ -222,8 +281,16 @@ function Landing() {
               const Icon = featureIcons[feature.icon] ?? Trophy;
               return (
                 <Reveal key={feature.slug} delay={i * 0.07}>
-                  <article className="surface-card group flex h-full flex-col p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-lift">
-                    <Icon className="h-8 w-8 text-primary transition-transform duration-500 group-hover:scale-110" />
+                  <article className="surface-card group relative flex h-full flex-col overflow-hidden p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-lift">
+                    <span
+                      aria-hidden
+                      className={`absolute inset-x-0 top-0 h-1 ${accentChips[i % accentChips.length]}`}
+                    />
+                    <span
+                      className={`grid h-14 w-14 place-items-center rounded-2xl transition-transform duration-500 group-hover:scale-110 ${accentChips[i % accentChips.length]}`}
+                    >
+                      <Icon className="h-7 w-7" />
+                    </span>
                     <h3 className="mt-5 text-lg font-bold text-primary">
                       {feature.cardTitle}
                     </h3>
@@ -306,10 +373,32 @@ function Landing() {
             </p>
           </Reveal>
 
-          <div className="mt-16 grid gap-12 md:grid-cols-3">
+          <div className="mt-14 grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+            <Reveal>
+              <div className="relative">
+                <div
+                  aria-hidden
+                  className="absolute -inset-4 -z-10 rounded-[2.5rem] blur-2xl"
+                  style={{
+                    background:
+                      "radial-gradient(50% 50% at 40% 40%, oklch(0.79 0.14 75 / 0.25), transparent 70%), radial-gradient(50% 50% at 70% 70%, oklch(0.53 0.21 285 / 0.25), transparent 70%)",
+                  }}
+                />
+                <img
+                  src={networkNodes}
+                  alt="Isometric illustration of a connected supply chain network"
+                  loading="lazy"
+                  width={1200}
+                  height={900}
+                  className="w-full rounded-[2rem] shadow-soft"
+                />
+              </div>
+            </Reveal>
+
+            <div className="grid gap-8 sm:grid-cols-3">
             {steps.map((step, i) => (
               <Reveal key={step.n} delay={i * 0.12} className="group relative text-center">
-                <span className="block text-[7rem] font-extrabold leading-none text-accent transition-colors duration-500 group-hover:text-primary/25 sm:text-[9rem]">
+                <span className={`block text-[5rem] font-extrabold leading-none transition-colors duration-500 sm:text-[6.5rem] ${stepAccents[i % stepAccents.length]}`}>
                   {step.n}
                 </span>
                 <h3 className="mt-2 text-xs font-bold tracking-widest text-secondary-foreground">
@@ -320,6 +409,7 @@ function Landing() {
                 </p>
               </Reveal>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -341,6 +431,30 @@ function Landing() {
           >
             Get Started
           </a>
+        </Reveal>
+      </section>
+
+      {/* TEAM VISUAL */}
+      <section className="px-6 pt-20">
+        <Reveal className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-[2rem] shadow-soft">
+            <img
+              src={teamCollab}
+              alt="A corporate team collaborating around a laptop"
+              loading="lazy"
+              width={1280}
+              height={960}
+              className="h-[260px] w-full object-cover object-center sm:h-[320px]"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(90deg, oklch(0.53 0.21 285 / 0.55) 0%, oklch(0.72 0.13 190 / 0.25) 55%, transparent 100%)",
+              }}
+            />
+          </div>
         </Reveal>
       </section>
 
