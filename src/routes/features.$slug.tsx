@@ -32,8 +32,9 @@ export const Route = createFileRoute("/features/$slug")({
 function FeatureDetail() {
   const { feature } = Route.useLoaderData();
   const index = features.findIndex((f) => f.slug === feature.slug);
-  const prev = features[(index - 1 + features.length) % features.length];
-  const next = features[(index + 1) % features.length];
+  const prev = features[(index - 1 + features.length) % features.length]!;
+  const next = features[(index + 1) % features.length]!;
+
 
   return (
     <main className="overflow-x-hidden">
