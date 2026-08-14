@@ -34,7 +34,7 @@ export function SiteHeader() {
             <a
               key={item.label}
               href={item.href}
-              className="story-link relative text-secondary-foreground transition-colors hover:text-primary"
+              className="relative text-secondary-foreground transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:text-primary hover:after:origin-left hover:after:scale-x-100"
             >
               {item.label}
             </a>
