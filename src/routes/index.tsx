@@ -162,7 +162,16 @@ function Landing() {
         ref={heroRef}
         className="grain-overlay relative isolate px-6 pt-36 pb-16 sm:pt-44"
       >
-        <div aria-hidden className="hairline-grid pointer-events-none absolute inset-0 -z-20 opacity-70" />
+        <div
+          aria-hidden
+          className="hairline-grid pointer-events-none absolute inset-0 -z-20 opacity-70"
+          style={{
+            maskImage:
+              "radial-gradient(120% 85% at 50% 25%, oklch(0 0 0) 0%, oklch(0 0 0 / 0.35) 55%, transparent 85%)",
+            WebkitMaskImage:
+              "radial-gradient(120% 85% at 50% 25%, oklch(0 0 0) 0%, oklch(0 0 0 / 0.35) 55%, transparent 85%)",
+          }}
+        />
         <div
           aria-hidden
           className="animate-blob pointer-events-none absolute -left-40 top-24 -z-10 h-[34rem] w-[34rem] rounded-full blur-[90px]"
