@@ -46,7 +46,7 @@ const sizes = [
   "500+ Employees",
 ];
 
-const selectClass = `${inputClass} appearance-none bg-[length:1rem] pr-12`;
+const selectClass = `${inputClass} pr-10`;
 
 function SignUpPage() {
   const [show, setShow] = useState(false);
@@ -78,7 +78,7 @@ function SignUpPage() {
             <input placeholder="Example@company.co.za" className={inputClass} />
           </Field>
 
-          <Field label="Description" className="sm:col-span-2">
+          <Field label="Description" className="sm:col-span-2 lg:col-span-1">
             <input placeholder="Company Description" className={inputClass} />
           </Field>
           <Field label="Industry">
