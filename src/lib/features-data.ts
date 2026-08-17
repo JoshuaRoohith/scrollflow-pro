@@ -42,9 +42,9 @@ export const features: Feature[] = [
     title: "Blinknet and Chat",
     cardTitle: "Blink's social features",
     cardBlurb:
-      "Discover and connect, engage with suppliers, explore company profiles, and find businesses that match your procurement needs.",
+      "Connect, discover, and engage with suppliers through BLINK. Build new supplier relationships, explore businesses beyond your existing supply chain, and identify qualified vendors that align with your procurement needs.",
     tagline:
-      "Discover and connect with suppliers, explore company profiles, and find businesses that match your procurement needs.",
+      "Connect, discover, and engage with suppliers through BLINK. Build new supplier relationships, explore businesses beyond your existing supply chain, and identify qualified vendors that align with your procurement needs.",
     bullets: [
       "Discover Suppliers — Browse and discover vendors/Procurers across industries to identify potential suppliers for your organisation.",
       "Build Supplier Connections — Send connection requests to suppliers/Procurers you would like to establish a relationship with.",
@@ -59,9 +59,9 @@ export const features: Feature[] = [
     title: "Opportunities",
     cardTitle: "Opportunities",
     cardBlurb:
-      "Discover procurement opportunities from government, publicly open regional opportunities and private buyers.",
+      "Create and discover new procurement opportunities through BLINK. Buyers can publish opportunities to their existing supplier base or the wider BLINK network, while vendors can discover and access both public and private opportunities aligned with their capabilities.",
     tagline:
-      "Browse, publish and manage procurement opportunities across your vendor network and the broader Blink community.",
+      "Create and discover new procurement opportunities through BLINK. Buyers can publish opportunities to their existing supplier base or the wider BLINK network, while vendors can discover and access both public and private opportunities aligned with their capabilities.",
     columns: [
       {
         heading: "Vendor Self-service",
@@ -96,9 +96,9 @@ export const features: Feature[] = [
     title: "Dashboards & Reports",
     cardTitle: "Dashboards & Reports",
     cardBlurb:
-      "Modular Based Dashboards and Custom Reports on all Activity in your Supply chain",
+      "Transform procurement data into meaningful insights that support better decisions,stronger supplier management, and improved performance. ",
     tagline:
-      "Modular Based Dashboards and Custom Reports on all Activity in your Supply chain",
+      "Transform procurement data into meaningful insights that support better decisions, stronger supplier management, and improved performance.",
     bullets: [
       "Vendor Management Reports (VMS) - Analyse your vendor ecosystem, including vendor activity, supplier information, spend, purchase orders, and industry distribution.",
       "Procure-to-Pay Reports (P2P) - Gain visibility into procurement activity across requisitions, sourcing events, evaluations, orders, invoices, and procurement spend.",
@@ -111,7 +111,7 @@ export const features: Feature[] = [
     title: "Vendor Management",
     cardTitle: "Vendor Management",
     cardBlurb:
-      "Manage your entire supplier base, from onboarding and verification to compliance, profiles and fine grain access control.",
+      "Manage your entire supplier base, from onboarding and verification to compliance, profiles and Permission based  access control.",
     tagline:
       "Modular Based Dashboards and Custom Reports on all Activity in your Supply chain",
     bullets: [

@@ -24,6 +24,8 @@ import heroDashboard from "../assets/hero-dashboard.jpg";
 import meshGradient from "../assets/mesh-gradient.jpg";
 import teamCollab from "../assets/team-collab.jpg";
 import networkNodes from "../assets/network-nodes.jpg";
+import vendorBuilding from "../assets/Vendor-building.jpg";
+import procurereBuilding from "../assets/Procurere-building.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,23 +67,30 @@ const featureAccents = [
   "ring-accent-violet",
 ];
 
-const featureImages = [meshGradient, networkNodes, heroDashboard, meshGradient, networkNodes, heroDashboard];
+const featureImages = [
+  meshGradient,
+  networkNodes,
+  heroDashboard,
+  meshGradient,
+  networkNodes,
+  heroDashboard,
+];
 
 const steps = [
   {
     n: "1",
     title: "REGISTER TO CREATE A PROFILE",
-    body: "Complete a simple form to load out your company details and upload compliance documents.",
+    body: "Create your BLINK supplier profile with your company details, capabilities, certifications, and required compliance documentation.",
   },
   {
     n: "2",
     title: "MANAGE YOUR PROFILE",
-    body: "Submit invoices, quotes and orders, manage compliance and pick the modules for your business.",
+    body: "Keep your business information and compliance credentials up to date, showcase your capabilities, and manage your supplier profile from one place.",
   },
   {
     n: "3",
     title: "APPLY FOR OPPORTUNITIES",
-    body: "Access exclusive private and public tenders and get onboarded as a registered supplier.",
+    body: "Explore public and private opportunities, connect with potential buyers, and submit your responses directly through BLINK.",
   },
 ];
 
@@ -160,7 +169,7 @@ function Landing() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="grain-overlay relative isolate px-6 pb-20 pt-40 sm:pb-24 sm:pt-48"
+        className="landing-section grain-overlay relative isolate pb-20 pt-40 sm:pb-24 sm:pt-48"
       >
         <div
           aria-hidden
@@ -190,32 +199,34 @@ function Landing() {
           }}
         />
 
-        <div className="mx-auto max-w-6xl">
+        <div className="landing-container">
           <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr]">
             <motion.div style={{ y: heroY }}>
               <Reveal>
                 <span className="inline-flex items-center gap-3 text-[0.68rem] font-semibold tracking-[0.3em] text-primary">
                   <span className="h-px w-10 bg-primary/50" />
-                  BUILT FOR SOUTH AFRICAN BUSINESSES
+                  BUILT FOR AFRICAN BUSINESSES
                 </span>
               </Reveal>
 
               <Reveal delay={0.08}>
                 <h1 className="mt-7 text-[3.3rem] font-extrabold leading-[0.92] tracking-tight text-primary sm:text-[5.2rem]">
                   Procurement,
-                  <span className="mt-1 block text-brand-gradient italic">
-                    Simplified
-                  </span>
+                  <span className="mt-1 block text-brand-gradient italic">Simplified</span>
                 </h1>
               </Reveal>
 
               <Reveal delay={0.16}>
                 <div className="mt-8 flex gap-5">
-                  <span aria-hidden className="mt-2 h-24 w-px shrink-0 bg-gradient-to-b from-primary/60 to-transparent" />
+                  <span
+                    aria-hidden
+                    className="mt-2 h-24 w-px shrink-0 bg-gradient-to-b from-primary/60 to-transparent"
+                  />
                   <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                    BLINK is a procurement and vendor management portal built for South
-                    African businesses — streamline supplier interactions, track
-                    compliance, and evaluate vendor performance all in one place.
+                    BLINK is a procurement and vendor management platform designed to connect large
+                    corporates with their supply chains simplifying supplier engagement,
+                    streamlining procurement processes, monitoring compliance, and evaluating vendor
+                    performance, all through one integrated platform.
                   </p>
                 </div>
               </Reveal>
@@ -241,54 +252,157 @@ function Landing() {
                 <p className="text-[0.6rem] font-semibold tracking-[0.28em] text-primary/70">
                   MODULAR BY DESIGN
                 </p>
-                <p className="mt-1 text-2xl font-extrabold text-primary">06</p>
+                <p className="mt-1 text-2xl font-extrabold text-primary">FOR YOU</p>
               </div>
             </motion.div>
           </div>
 
           {/* dual entry cards */}
-          <div className="mt-28 grid gap-px sm:mt-32 overflow-hidden rounded-[1.75rem] border border-primary/10 bg-primary/10 lg:grid-cols-2">
-            <Reveal className="h-full">
-              <article className="group relative flex h-full flex-col bg-card p-9 transition-colors duration-500 hover:bg-accent/40">
-                <span className="ring-accent-violet grid h-12 w-12 place-items-center rounded-2xl transition-transform duration-500 group-hover:-rotate-6">
-                  <Handshake className="h-6 w-6" />
-                </span>
-                <h2 className="mt-6 text-3xl font-bold tracking-tight text-primary-soft">
-                  Vendor Self-Service
-                </h2>
-                <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                  Manage your profile &amp; apply to public and private opportunities.
+          <div className="mt-28 sm:mt-32">
+            <Reveal>
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="text-[0.68rem] font-semibold tracking-[0.3em] text-muted-foreground">
+                  TWO POWERFUL SOLUTIONS. ONE CONNECTED PLATFORM.
                 </p>
-                <Link
-                  to="/signup"
-                  className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:gap-4"
-                >
-                  Sign up <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
+                <h2 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight text-primary sm:text-5xl lg:text-6xl">
+                  Built for <span className="text-primary-soft">suppliers</span>. Designed for{" "}
+                  <span className="text-teal">buyers</span>.
+                </h2>
+                <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  BLINK connects businesses across the procurement ecosystem. Choose the experience
+                  that&apos;s right for you.
+                </p>
+              </div>
             </Reveal>
 
-            <Reveal delay={0.1} className="h-full">
-              <article className="group relative flex h-full flex-col bg-card p-9 transition-colors duration-500 hover:bg-accent/40">
-                <span className="ring-accent-teal grid h-12 w-12 place-items-center rounded-2xl transition-transform duration-500 group-hover:rotate-6">
-                  <Users className="h-6 w-6" />
-                </span>
-                <h2 className="mt-6 text-3xl font-bold tracking-tight text-primary-soft">
-                  Supply Chain Management
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Digitise your supply chain with vendor onboarding, management &amp;
-                  verification, procurement processes, opportunities, dashboards &amp;
-                  reports, Procure-to-Pay and Contract &amp; Service Management.
-                </p>
-                <a
-                  href="#contact"
-                  className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-primary/25 px-7 py-3 text-sm font-semibold text-primary transition-all duration-300 hover:gap-4 hover:bg-accent"
-                >
-                  Book a Demo <ArrowRight className="h-4 w-4" />
-                </a>
-              </article>
-            </Reveal>
+            <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
+              <Reveal className="h-full">
+                <article className="group relative flex h-full min-h-[37rem] flex-col overflow-hidden rounded-[1.75rem] border border-primary/15 bg-card p-7 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-lift sm:p-9">
+                  <div
+                    aria-hidden
+                    className="absolute -right-20 -top-16 h-64 w-64 rounded-full bg-primary/15 blur-3xl transition-opacity duration-500 group-hover:bg-primary/25"
+                  />
+                  <img
+                    src={vendorBuilding}
+                    alt="Supplier building illustration"
+                    width={1536}
+                    height={1024}
+                    className="pointer-events-none absolute right-3 top-7 z-10 w-[36%] max-w-52 object-contain transition-transform duration-500 group-hover:scale-105 sm:right-5 sm:top-9 sm:max-w-60"
+                  />
+                  <div className="relative z-20 pr-[29%]">
+                    <span className="ring-accent-violet grid h-12 w-12 place-items-center rounded-2xl transition-transform duration-500 group-hover:-rotate-6">
+                      <Handshake className="h-6 w-6" />
+                    </span>
+                    <h3 className="mt-6 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+                      I&apos;m a Supplier
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                      Grow your business. Find opportunities. Connect with buyers and showcase your
+                      capabilities.
+                    </p>
+                  </div>
+                  <div className="relative z-20 mt-7 border-t border-primary/10 pt-6">
+                    <p className="text-[0.65rem] font-semibold tracking-[0.26em] text-primary/70">
+                      WHAT YOU CAN DO
+                    </p>
+                    <ul className="mt-4 space-y-3 text-sm leading-snug text-foreground">
+                      {[
+                        "Create a professional supplier profile",
+                        "Discover public and private opportunities",
+                        "Connect with verified buyers",
+                        "Submit quotes, proposals and bids online",
+                        "Manage compliance and business documents",
+                        "Build long-term business relationships",
+                      ].map((feature) => (
+                        <li key={feature} className="flex items-start gap-3">
+                          <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-primary/15 text-primary">
+                            <BadgeCheck className="h-3.5 w-3.5" />
+                          </span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="relative z-20 mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-8">
+                    <Link
+                      to="/signup"
+                      className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:gap-3"
+                    >
+                      Sign up <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <a
+                      href="#features"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all duration-300 hover:gap-2.5"
+                    >
+                      Learn more <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </article>
+              </Reveal>
+
+              <Reveal delay={0.1} className="h-full">
+                <article className="group relative flex h-full min-h-[37rem] flex-col overflow-hidden rounded-[1.75rem] border border-teal/25 bg-card p-7 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-lift sm:p-9">
+                  <div
+                    aria-hidden
+                    className="absolute -right-20 -top-16 h-64 w-64 rounded-full bg-teal/20 blur-3xl transition-opacity duration-500 group-hover:bg-teal/30"
+                  />
+                  <img
+                    src={procurereBuilding}
+                    alt="Buyer procurement building illustration"
+                    width={1536}
+                    height={1024}
+                    className="pointer-events-none absolute right-3 top-7 z-10 w-[36%] max-w-52 object-contain transition-transform duration-500 group-hover:scale-105 sm:right-5 sm:top-9 sm:max-w-60"
+                  />
+                  <div className="relative z-20 pr-[29%]">
+                    <span className="ring-accent-teal grid h-12 w-12 place-items-center rounded-2xl transition-transform duration-500 group-hover:rotate-6">
+                      <Users className="h-6 w-6" />
+                    </span>
+                    <h3 className="mt-6 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+                      I&apos;m a Buyer
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                      Streamline procurement. Manage suppliers. Drive value and ensure compliance.
+                    </p>
+                  </div>
+                  <div className="relative z-20 mt-7 border-t border-teal/20 pt-6">
+                    <p className="text-[0.65rem] font-semibold tracking-[0.26em] text-teal">
+                      WHAT YOU CAN DO
+                    </p>
+                    <ul className="mt-4 space-y-3 text-sm leading-snug text-foreground">
+                      {[
+                        "Manage suppliers and supplier information",
+                        "Create and publish opportunities",
+                        "Evaluate bids, quotes and proposals",
+                        "Track supplier performance and manage contracts",
+                        "Ensure compliance and governance",
+                        "Access insights and reporting dashboards",
+                      ].map((feature) => (
+                        <li key={feature} className="flex items-start gap-3">
+                          <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-teal/20 text-teal">
+                            <BadgeCheck className="h-3.5 w-3.5" />
+                          </span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="relative z-20 mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-8">
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-ink shadow-soft transition-all duration-300 hover:gap-3"
+                    >
+                      Book a Demo <ArrowRight className="h-4 w-4" />
+                    </a>
+                    <a
+                      href="#features"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal transition-all duration-300 hover:gap-2.5"
+                    >
+                      Learn more <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </article>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
@@ -296,8 +410,8 @@ function Landing() {
       <Ticker />
 
       {/* ── ABOUT ────────────────────────────────────────── */}
-      <section id="about" className="relative px-6 py-24 sm:py-32">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <section id="about" className="landing-section relative py-24 sm:py-32">
+        <div className="landing-container grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <div className="lg:sticky lg:top-32">
               <p className="text-[0.68rem] font-semibold tracking-[0.3em] text-muted-foreground">
@@ -315,10 +429,9 @@ function Landing() {
           <div>
             <Reveal delay={0.1}>
               <p className="max-w-2xl text-lg leading-relaxed text-secondary-foreground sm:text-xl">
-                Built for procurers and suppliers, whether you're managing a supply chain
-                or growing your business. BLINK gives you the flexibility to choose the
-                modules that best suit your business, so you can build a platform around
-                your specific needs.
+                Built for procurers and suppliers, whether you're managing a supply chain or growing
+                your business. BLINK gives you the flexibility to choose the modules that best suit
+                your business, so you can build a platform around your specific needs.
               </p>
             </Reveal>
             <Reveal delay={0.18}>
@@ -365,8 +478,8 @@ function Landing() {
       </section>
 
       {/* ── FEATURES: editorial index ────────────────────── */}
-      <section id="features" className="band-aurora grain-overlay px-6 py-24 sm:py-32">
-        <div className="mx-auto max-w-6xl">
+      <section id="features" className="landing-section band-aurora grain-overlay py-24 sm:py-32">
+        <div className="landing-container">
           <Reveal>
             <p className="text-[0.68rem] font-semibold tracking-[0.3em] text-muted-foreground">
               02 — CAPABILITIES
@@ -377,8 +490,8 @@ function Landing() {
                 <span className="block text-brand-gradient italic">Capabilities</span>
               </h2>
               <p className="max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Built specifically for the Governance landscape with enterprise-grade
-                features
+                Enterprise-ready capabilities that bring procurement, supplier management, and
+                supply chain intelligence together in one platform
               </p>
             </div>
           </Reveal>
@@ -435,14 +548,7 @@ function Landing() {
             })}
           </div>
 
-          <Reveal delay={0.1} className="mt-16 flex justify-center sm:mt-20">
-            <a
-              href="#contact"
-              className="rounded-full bg-primary px-9 py-3.5 text-sm font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              Request a Demo
-            </a>
-          </Reveal>
+          
         </div>
       </section>
 
@@ -465,7 +571,7 @@ function Landing() {
               "linear-gradient(180deg, oklch(0.24 0.03 278 / 0.55), oklch(0.24 0.03 278 / 0.85))",
           }}
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+        <div className="landing-section absolute inset-0 flex flex-col items-center justify-center text-center">
           <Reveal>
             <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-[1.05] tracking-tight text-primary-foreground sm:text-5xl">
               Take your business to next level.
@@ -473,8 +579,8 @@ function Landing() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-primary-foreground/85 sm:text-base">
-              End-to-end management and procurement in a Single Solution. Meet the right
-              platform to Elevate Your Business.
+              End-to-end management and procurement in a Single Solution. Meet the right platform to
+              Elevate Your Business.
             </p>
           </Reveal>
           <Reveal delay={0.18}>
@@ -482,15 +588,15 @@ function Landing() {
               to="/signup"
               className="mt-9 inline-block rounded-full bg-primary-foreground px-9 py-3.5 text-sm font-semibold text-primary shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
             >
-              Start Free Trial
+              Book a Demo
             </Link>
           </Reveal>
         </div>
       </section>
 
       {/* ── ONBOARDING ───────────────────────────────────── */}
-      <section className="px-6 py-24 sm:py-32">
-        <div className="mx-auto max-w-6xl">
+      <section className="landing-section py-24 sm:py-32">
+        <div className="landing-container">
           <Reveal>
             <p className="text-[0.68rem] font-semibold tracking-[0.3em] text-muted-foreground">
               03 — GETTING STARTED
@@ -498,11 +604,11 @@ function Landing() {
             <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <h2 className="text-4xl font-extrabold leading-[1] tracking-tight text-primary sm:text-6xl">
                 Simple Three Step
-                <span className="block text-outline">Onboarding</span>
+                <span className="block text-outline">Onboarding as a Vendor</span>
               </h2>
               <p className="max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
-                No complex setup. No implementation fees. Start managing vendors in under
-                10 minutes.
+                No complex setup. No implementation fees. Start your vendor Journey in under 10
+                minutes.
               </p>
             </div>
           </Reveal>
@@ -555,8 +661,8 @@ function Landing() {
       </section>
 
       {/* ── BAND CTA ─────────────────────────────────────── */}
-      <section className="px-6">
-        <Reveal className="mx-auto max-w-6xl">
+      <section className="landing-section">
+        <Reveal className="landing-container">
           <div className="ink-panel grain-overlay relative overflow-hidden rounded-[2rem] px-8 py-12 sm:px-14 sm:py-16">
             <div className="relative z-10 flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
               <div className="min-w-0 max-w-2xl">
@@ -579,8 +685,8 @@ function Landing() {
       </section>
 
       {/* ── TEAM VISUAL ──────────────────────────────────── */}
-      <section className="px-6 pt-24 sm:pt-28">
-        <Reveal className="mx-auto max-w-6xl">
+      <section className="landing-section pt-24 sm:pt-28">
+        <Reveal className="landing-container">
           <div className="relative overflow-hidden rounded-[2rem]">
             <img
               src={teamCollab}
@@ -603,8 +709,8 @@ function Landing() {
       </section>
 
       {/* ── CONTACT ──────────────────────────────────────── */}
-      <section id="contact" className="px-6 py-24 sm:py-28">
-        <div className="mx-auto max-w-6xl">
+      <section id="contact" className="landing-section py-24 sm:py-28">
+        <div className="landing-container">
           <Reveal>
             <p className="text-[0.68rem] font-semibold tracking-[0.3em] text-muted-foreground">
               04 — CONTACT
@@ -615,8 +721,7 @@ function Landing() {
                 <span className="block text-brand-gradient italic">Touch</span>
               </h2>
               <p className="max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
-                We'd love to hear from you. Reach out to us for any inquiries or to
-                schedule a demo
+                We'd love to hear from you. Reach out to us for any inquiries or to schedule a demo
               </p>
             </div>
           </Reveal>
@@ -634,7 +739,9 @@ function Landing() {
                   { Icon: Mail, tint: "ring-accent-coral", lines: ["admin@procurementco.at"] },
                 ].map(({ Icon, tint, lines }) => (
                   <div key={lines[0]} className="flex min-w-0 items-start gap-4 p-6">
-                    <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${tint}`}>
+                    <span
+                      className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${tint}`}
+                    >
                       <Icon className="h-5 w-5" />
                     </span>
                     <div className="min-w-0 text-sm leading-relaxed text-muted-foreground">
