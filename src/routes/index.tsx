@@ -160,7 +160,7 @@ function Landing() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="grain-overlay relative isolate px-6 pt-36 pb-16 sm:pt-44"
+        className="grain-overlay relative isolate px-6 pb-20 pt-40 sm:pb-24 sm:pt-48"
       >
         <div
           aria-hidden
@@ -247,7 +247,7 @@ function Landing() {
           </div>
 
           {/* dual entry cards */}
-          <div className="mt-24 grid gap-px overflow-hidden rounded-[1.75rem] border border-primary/10 bg-primary/10 lg:grid-cols-2">
+          <div className="mt-28 grid gap-px sm:mt-32 overflow-hidden rounded-[1.75rem] border border-primary/10 bg-primary/10 lg:grid-cols-2">
             <Reveal className="h-full">
               <article className="group relative flex h-full flex-col bg-card p-9 transition-colors duration-500 hover:bg-accent/40">
                 <span className="ring-accent-violet grid h-12 w-12 place-items-center rounded-2xl transition-transform duration-500 group-hover:-rotate-6">
@@ -259,12 +259,12 @@ function Landing() {
                 <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
                   Manage your profile &amp; apply to public and private opportunities.
                 </p>
-                <a
-                  href="#contact"
+                <Link
+                  to="/signup"
                   className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:gap-4"
                 >
                   Sign up <ArrowRight className="h-4 w-4" />
-                </a>
+                </Link>
               </article>
             </Reveal>
 
@@ -435,7 +435,7 @@ function Landing() {
             })}
           </div>
 
-          <Reveal delay={0.1} className="mt-14 flex justify-center">
+          <Reveal delay={0.1} className="mt-16 flex justify-center sm:mt-20">
             <a
               href="#contact"
               className="rounded-full bg-primary px-9 py-3.5 text-sm font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
@@ -478,12 +478,12 @@ function Landing() {
             </p>
           </Reveal>
           <Reveal delay={0.18}>
-            <a
-              href="#contact"
+            <Link
+              to="/signup"
               className="mt-9 inline-block rounded-full bg-primary-foreground px-9 py-3.5 text-sm font-semibold text-primary shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
             >
               Start Free Trial
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -567,19 +567,19 @@ function Landing() {
                   Contact us TODAY for tailored packages and features for your business.
                 </p>
               </div>
-              <a
-                href="#contact"
+              <Link
+                to="/signup"
                 className="shrink-0 rounded-full bg-primary-foreground px-9 py-3.5 text-sm font-semibold text-primary shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
           </div>
         </Reveal>
       </section>
 
       {/* ── TEAM VISUAL ──────────────────────────────────── */}
-      <section className="px-6 pt-20">
+      <section className="px-6 pt-24 sm:pt-28">
         <Reveal className="mx-auto max-w-6xl">
           <div className="relative overflow-hidden rounded-[2rem]">
             <img
