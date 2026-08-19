@@ -3,9 +3,10 @@ import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useRef } from "react";
 import {
   ArrowRight,
-  ArrowUpRight,
   Handshake,
   Users,
+  ShieldCheck,
+  Zap,
   Trophy,
   Share2,
   FileCheck2,
@@ -18,12 +19,12 @@ import {
 
 import { Reveal } from "../components/reveal";
 import { features } from "../lib/features-data";
-import waveDivider from "../assets/wave-divider.jpg";
 import ctaHandshake from "../assets/cta-handshake.jpg";
 import heroDashboard from "../assets/hero-dashboard.jpg";
 import meshGradient from "../assets/mesh-gradient.jpg";
 import teamCollab from "../assets/team-collab.jpg";
 import networkNodes from "../assets/network-nodes.jpg";
+import waveDivider from "../assets/wave-divider.jpg";
 import vendorBuilding from "../assets/Vendor-building.jpg";
 import procurereBuilding from "../assets/Procurere-building.jpg";
 
@@ -91,6 +92,29 @@ const steps = [
     n: "3",
     title: "APPLY FOR OPPORTUNITIES",
     body: "Explore public and private opportunities, connect with potential buyers, and submit your responses directly through BLINK.",
+  },
+];
+
+const platformHighlights = [
+  {
+    title: "Secure & Compliant",
+    body: "Enterprise-grade security you can trust.",
+    Icon: ShieldCheck,
+  },
+  {
+    title: "Built for Performance",
+    body: "Fast, reliable and ready to scale.",
+    Icon: Zap,
+  },
+  {
+    title: "For Procurers and Suppliers",
+    body: "Empowering both sides of the supply chain.",
+    Icon: Users,
+  },
+  {
+    title: "Scalable For Any Business",
+    body: "From small teams to enterprise operations.",
+    Icon: ShieldCheck,
   },
 ];
 
@@ -410,69 +434,75 @@ function Landing() {
       <Ticker />
 
       {/* ── ABOUT ────────────────────────────────────────── */}
-      <section id="about" className="landing-section relative py-24 sm:py-32">
-        <div className="landing-container grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal>
-            <div className="lg:sticky lg:top-32">
-              <p className="text-[0.68rem] font-semibold tracking-[0.3em] text-muted-foreground">
-                01 — THE PLATFORM
-              </p>
-              <h2 className="mt-6 text-4xl font-extrabold leading-[1] tracking-tight text-primary sm:text-6xl">
-                TWO SIDES,
-                <span className="block text-outline">ONE MODULAR</span>
-                <span className="block">PLATFORM!</span>
-              </h2>
-              <div aria-hidden className="rule-tick mt-8 h-2 w-40 opacity-60" />
+      <section id="about" className="landing-section relative py-14 sm:py-20">
+        <div className="landing-container relative overflow-hidden rounded-[2rem] border border-primary/10 bg-card/70 px-6 py-9 shadow-soft sm:px-10 sm:py-12 lg:px-16 lg:py-16">
+          <img
+            src={waveDivider}
+            alt=""
+            aria-hidden
+            loading="lazy"
+            width={1920}
+            height={600}
+            className="pointer-events-none absolute -bottom-10 -left-20 h-[42%] w-[72%] max-w-none object-cover object-left-bottom opacity-75"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-[42%] top-1/4 h-80 w-80 rounded-full opacity-55 blur-3xl"
+            style={{
+              background: "radial-gradient(circle, oklch(0.68 0.14 283 / 0.18), transparent 68%)",
+            }}
+          />
+          <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
+            <Reveal>
+              <div className="max-w-xl">
+                <p className="flex items-center gap-3 text-[0.68rem] font-semibold tracking-[0.3em] text-primary">
+                  <span className="rounded-md bg-accent px-3 py-2 text-[0.65rem]">01</span>
+                  <span className="h-px w-4 bg-primary/60" />
+                  THE PLATFORM
+                </p>
+                <h2 className="mt-8 text-5xl font-extrabold leading-[0.95] tracking-tight text-primary sm:text-6xl lg:text-7xl">
+                  TWO SIDES,
+                  <span className="block text-outline">ONE MODULAR</span>
+                  <span className="block text-brand-gradient">PLATFORM!</span>
+                </h2>
+                <div aria-hidden className="rule-tick mt-8 h-2 w-52 opacity-75" />
+                <p className="mt-8 max-w-lg text-base leading-relaxed text-secondary-foreground sm:text-lg">
+                  Built for procurers and suppliers, whether you're managing a supply chain or
+                  growing your business. BLINK gives you the flexibility to choose the modules that
+                  best suit your business, so you can build a platform around your specific needs.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+              {platformHighlights.map(({ title, body, Icon }, index) => (
+                <Reveal key={title} delay={0.08 + index * 0.06} className="h-full">
+                  <article className="group relative flex h-full min-h-56 flex-col overflow-hidden rounded-[1.5rem] border border-primary/10 bg-card/90 p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1 sm:p-7">
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute -bottom-5 -right-5 h-24 w-24 opacity-50"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(oklch(0.53 0.21 285 / 0.34) 1px, transparent 1.5px)",
+                        backgroundSize: "9px 9px",
+                      }}
+                    />
+                    <span className="ring-accent-violet grid h-14 w-14 place-items-center rounded-2xl transition-transform duration-300 group-hover:-rotate-6">
+                      <Icon className="h-7 w-7" />
+                    </span>
+                    <h3 className="mt-7 max-w-xs text-xl font-bold leading-tight tracking-tight text-primary">
+                      {title}
+                    </h3>
+                    <p className="mt-4 max-w-[16rem] text-sm leading-relaxed text-secondary-foreground sm:text-base">
+                      {body}
+                    </p>
+                    <span aria-hidden className="mt-auto pt-6 text-3xl leading-none text-primary">
+                      —
+                    </span>
+                  </article>
+                </Reveal>
+              ))}
             </div>
-          </Reveal>
-
-          <div>
-            <Reveal delay={0.1}>
-              <p className="max-w-2xl text-lg leading-relaxed text-secondary-foreground sm:text-xl">
-                Built for procurers and suppliers, whether you're managing a supply chain or growing
-                your business. BLINK gives you the flexibility to choose the modules that best suit
-                your business, so you can build a platform around your specific needs.
-              </p>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <a
-                  href="#contact"
-                  className="rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition-transform duration-300 hover:-translate-y-0.5"
-                >
-                  Book a Demo
-                </a>
-                <a
-                  href="#features"
-                  className="inline-flex items-center gap-2 rounded-full border border-primary/25 px-8 py-3.5 text-sm font-semibold text-primary transition-all duration-300 hover:gap-4 hover:bg-accent"
-                >
-                  How it works <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.24}>
-              <div className="relative mt-14 overflow-hidden rounded-[1.75rem]">
-                <img
-                  src={waveDivider}
-                  alt=""
-                  aria-hidden
-                  loading="lazy"
-                  width={1920}
-                  height={600}
-                  className="h-52 w-full object-cover sm:h-64"
-                />
-                <img
-                  src={meshGradient}
-                  alt=""
-                  aria-hidden
-                  loading="lazy"
-                  width={1600}
-                  height={900}
-                  className="absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-soft-light"
-                />
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>
@@ -547,8 +577,6 @@ function Landing() {
               );
             })}
           </div>
-
-          
         </div>
       </section>
 
@@ -574,7 +602,7 @@ function Landing() {
         <div className="landing-section absolute inset-0 flex flex-col items-center justify-center text-center">
           <Reveal>
             <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-[1.05] tracking-tight text-primary-foreground sm:text-5xl">
-              Take your business to next level.
+              Take your business to next level Onboard as a Procurer.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
